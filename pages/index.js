@@ -1,24 +1,32 @@
-import { Box, Container, Heading, Text } from '@chakra-ui/react'
-import heroImg from '../images/coral_matt.jpg'
+import { Container, Text } from '@chakra-ui/react'
+import HeroImage from '../components/heroImage'
+import Nav from '../components/Nav'
 
 const Home = () => {
   return (
     <>
-      <Box 
-        display="flex"
-        width="100%" 
-        height="75vh" 
-        backgroundImage={`linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${heroImg.src})`}
-        backgroundPosition="center"
-        backgroundSize="cover"
-      >
-        <Container maxW="lg" centerContent py={4} m="auto">
-          <Heading as="h1" size="2xl" color="white" display="flex" alignItems="center">
-            Coral <Heading size="4xl" mx={3}>&</Heading> Matt
-          </Heading>
-          <Text as="h2" fontSize="xl" color="white">28th September 2024</Text>
-        </Container>
-      </Box>
+      <HeroImage />
+      <Nav />
+
+      <Container my={4}>
+        <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam at ultricies nisi, ac rutrum felis. Sed cursus, mi a pharetra consectetur, justo justo blandit risus, ac ullamcorper dolor eros sodales elit. Vivamus nec mattis purus, in lacinia diam. Vestibulum lectus ex, convallis ac quam nec, tempor pretium risus. Aliquam facilisis molestie interdum. Vestibulum ac lobortis velit. Etiam elementum id arcu vitae semper. Donec non placerat ipsum, at auctor elit. In hac habitasse platea dictumst. Ut lacinia nunc eget fringilla tincidunt.</Text>
+      </Container>
+
+      <Container my={4}>
+        <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam at ultricies nisi, ac rutrum felis. Sed cursus, mi a pharetra consectetur, justo justo blandit risus, ac ullamcorper dolor eros sodales elit. Vivamus nec mattis purus, in lacinia diam. Vestibulum lectus ex, convallis ac quam nec, tempor pretium risus. Aliquam facilisis molestie interdum. Vestibulum ac lobortis velit. Etiam elementum id arcu vitae semper. Donec non placerat ipsum, at auctor elit. In hac habitasse platea dictumst. Ut lacinia nunc eget fringilla tincidunt.</Text>
+      </Container>
+
+      <Container my={4}>
+        <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam at ultricies nisi, ac rutrum felis. Sed cursus, mi a pharetra consectetur, justo justo blandit risus, ac ullamcorper dolor eros sodales elit. Vivamus nec mattis purus, in lacinia diam. Vestibulum lectus ex, convallis ac quam nec, tempor pretium risus. Aliquam facilisis molestie interdum. Vestibulum ac lobortis velit. Etiam elementum id arcu vitae semper. Donec non placerat ipsum, at auctor elit. In hac habitasse platea dictumst. Ut lacinia nunc eget fringilla tincidunt.</Text>
+      </Container>
+
+      <Container my={4}>
+        <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam at ultricies nisi, ac rutrum felis. Sed cursus, mi a pharetra consectetur, justo justo blandit risus, ac ullamcorper dolor eros sodales elit. Vivamus nec mattis purus, in lacinia diam. Vestibulum lectus ex, convallis ac quam nec, tempor pretium risus. Aliquam facilisis molestie interdum. Vestibulum ac lobortis velit. Etiam elementum id arcu vitae semper. Donec non placerat ipsum, at auctor elit. In hac habitasse platea dictumst. Ut lacinia nunc eget fringilla tincidunt.</Text>
+      </Container>
+
+      <Container my={4}>
+        <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam at ultricies nisi, ac rutrum felis. Sed cursus, mi a pharetra consectetur, justo justo blandit risus, ac ullamcorper dolor eros sodales elit. Vivamus nec mattis purus, in lacinia diam. Vestibulum lectus ex, convallis ac quam nec, tempor pretium risus. Aliquam facilisis molestie interdum. Vestibulum ac lobortis velit. Etiam elementum id arcu vitae semper. Donec non placerat ipsum, at auctor elit. In hac habitasse platea dictumst. Ut lacinia nunc eget fringilla tincidunt.</Text>
+      </Container>
     </>
   )
 }
