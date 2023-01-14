@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { 
   Box, 
   Container, 
@@ -20,29 +20,39 @@ const Nav = () => {
   const btnRef = useRef()
   const { isOpen, onOpen, onClose } = useDisclosure()
 
+  const handleClick = event => {
+    event.preventDefault()
+    const sectionName = event.target.href.split('#')[1]
+    const section =  document.getElementById(sectionName)
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
   const FirstLinks = () => (
     <>
-      <Link>Wedding</Link>
-      <Link>Accomodation</Link>
+      <Link href="#wedding" onClick={handleClick}>Wedding</Link>
+      <Link href="#accomodation" onClick={handleClick}>Accomodation</Link>
+      <Link href="#gifts" onClick={handleClick}>Gifts</Link>
     </>
   )
 
   const SecondLinks = () => (
     <>
-      <Link>RSVP</Link>
-      <Link>Photos</Link>
+      <Link href="#faqs" onClick={handleClick}>FAQs</Link>
+      <Link href="#rsvp" onClick={handleClick}>RSVP</Link>
+      <Link href="#photos" onClick={handleClick}>Photos</Link>
     </>
   )
 
   return (
     <Container 
-      maxWidth={1024} 
+      maxWidth={1100} 
       display="flex" 
       py={4}
       position="sticky" 
       top={-1} 
       alignItems="center"
       background="white"
+      zIndex={1}
     >
       {!isMobile && 
         <Box mr="auto" display="flex" flex={1} justifyContent="space-evenly">

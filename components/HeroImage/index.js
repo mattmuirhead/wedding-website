@@ -5,6 +5,7 @@ import Logo from '../Logo'
 const HeroImage = () => {
   return (
     <Box 
+      id="top"
       display="flex"
       width="100%" 
       height="75vh" 
