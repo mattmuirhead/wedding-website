@@ -20,26 +20,24 @@ const Nav = () => {
   const btnRef = useRef()
   const { isOpen, onOpen, onClose } = useDisclosure()
 
-  const handleClick = event => {
-    event.preventDefault()
-    const sectionName = event.target.href.split('#')[1]
+  const handleClick = sectionName => {
     const section =  document.getElementById(sectionName)
     section.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
   const FirstLinks = () => (
     <>
-      <Link href="#wedding" onClick={handleClick}>Wedding</Link>
-      <Link href="#accomodation" onClick={handleClick}>Accomodation</Link>
-      <Link href="#gifts" onClick={handleClick}>Gifts</Link>
+      <Link onClick={() => handleClick('wedding')}>Wedding</Link>
+      <Link onClick={() => handleClick('accomodation')}>Accomodation</Link>
+      <Link onClick={() => handleClick('gifts')}>Gifts</Link>
     </>
   )
 
   const SecondLinks = () => (
     <>
-      <Link href="#faqs" onClick={handleClick}>FAQs</Link>
-      <Link href="#rsvp" onClick={handleClick}>RSVP</Link>
-      <Link href="#photos" onClick={handleClick}>Photos</Link>
+      <Link onClick={() => handleClick('faqs')}>FAQs</Link>
+      <Link onClick={() => handleClick('rsvp')}>RSVP</Link>
+      <Link onClick={() => handleClick('photos')}>Photos</Link>
     </>
   )
 
