@@ -8,8 +8,15 @@ import Gifts from '../components/Gifts'
 import Faqs from '../components/Faqs'
 import Rsvp from '../components/Rsvp'
 import ReturnToTop from '../components/ReturnToTop'
+import Login from '../components/Login'
+import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 
 const Home = () => {
+  const user = useSelector(state => state?.session?.user)
+
+  if (!user) return <Login />
+
   return (
     <>
       <HeroImage />
