@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import { 
   Box, 
   Container, 
@@ -15,31 +15,32 @@ import {
 import { HamburgerIcon } from '@chakra-ui/icons'
 import Logo from '../Logo'
 
+const handleClick = sectionName => {
+  const section = document.getElementById(sectionName)
+  section.scrollIntoView({ behavior: 'smooth', block: 'start' })
+}
+
+const FirstLinks = () => (
+  <>
+    <Link onClick={() => handleClick('wedding')}>Wedding</Link>
+    <Link onClick={() => handleClick('accomodation')}>Accomodation</Link>
+    <Link onClick={() => handleClick('gifts')}>Gifts</Link>
+  </>
+)
+
+const SecondLinks = () => (
+  <>
+    <Link onClick={() => handleClick('faqs')}>FAQs</Link>
+    <Link onClick={() => handleClick('rsvp')}>RSVP</Link>
+    <Link onClick={() => handleClick('photos')}>Photos</Link>
+  </>
+)
+
 const Nav = () => {
   const [isMobile] = useMediaQuery('(max-width: 700px)')
   const btnRef = useRef()
   const { isOpen, onOpen, onClose } = useDisclosure()
 
-  const handleClick = sectionName => {
-    const section =  document.getElementById(sectionName)
-    section.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  }
-
-  const FirstLinks = () => (
-    <>
-      <Link onClick={() => handleClick('wedding')}>Wedding</Link>
-      <Link onClick={() => handleClick('accomodation')}>Accomodation</Link>
-      <Link onClick={() => handleClick('gifts')}>Gifts</Link>
-    </>
-  )
-
-  const SecondLinks = () => (
-    <>
-      <Link onClick={() => handleClick('faqs')}>FAQs</Link>
-      <Link onClick={() => handleClick('rsvp')}>RSVP</Link>
-      <Link onClick={() => handleClick('photos')}>Photos</Link>
-    </>
-  )
 
   return (
     <Container 
