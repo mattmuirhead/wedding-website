@@ -1,4 +1,4 @@
-import HeroImage from '/components/heroImage'
+// import HeroImage from '/components/heroImage'
 import Nav from '/components/Nav'
 import Intro from '/components/Intro'
 import Wedding from '/components/Wedding'
@@ -37,7 +37,7 @@ const Home = () => {
       {isLoading && <Loading />}
       {user?.id ? (
         <>
-          <HeroImage />
+          {/* <HeroImage /> */}
           <Nav />
           <Intro />
           <Wedding />
