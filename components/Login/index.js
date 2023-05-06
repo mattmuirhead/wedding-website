@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Box, Container, Input, InputGroup, InputRightElement, IconButton, Text } from '@chakra-ui/react'
+import { Box, Button, Container, Input, InputGroup, IconButton, Text } from '@chakra-ui/react'
 import { ViewIcon, ViewOffIcon, ArrowForwardIcon } from '@chakra-ui/icons'
 import lockedImg from '../../images/locked.jpeg'
 import { setSession, setLoading } from '../../state/session'
@@ -8,11 +8,8 @@ import { login } from '../../helpers/login'
 
 const Login = () => {
   const dispatch = useDispatch()
-  const [show, setShow] = useState(false)
   const [passcode, setPasscode] = useState('')
   const [error, setError] = useState(false)
-
-  const toggleViewPasscode = () => setShow(!show)
 
   const handleLogin = e => {
     e.preventDefault()
@@ -39,13 +36,13 @@ const Login = () => {
     >
       <Container maxWidth={400} display="flex" flexDirection="column">
         <form onSubmit={handleLogin}>
-          <Box display="flex" alignItems="center" gap={3}>
-            <InputGroup size="md">
+          <Box alignItems="center" gap={3}>
+            <InputGroup size="md" mb={4}>
               <Input
                 isInvalid={error}
                 pr="3rem"
-                type={show ? 'text' : 'password'}
-                placeholder="Enter password"
+                type="password"
+                placeholder="Password"
                 size="lg" 
                 focusBorderColor="white"
                 color="white"
@@ -58,17 +55,9 @@ const Login = () => {
               />
             </InputGroup>
 
-            <IconButton 
-              aria-label='Show/Hide passcode'
-              icon={show ? <ViewOffIcon /> : <ViewIcon />}
-              onClick={toggleViewPasscode}
-            />
-
-            <IconButton 
-              type="submit"
-              aria-label="Enter"
-              icon={<ArrowForwardIcon />}
-            />
+            <Button type="submit" aria-label="Enter">
+              Enter
+            </Button>
           </Box>
 
           <Text color="red" mb={4} height={8}>{!!error && <>Incorrect passcode</>}</Text>
