@@ -2,7 +2,6 @@ import { Box } from '@chakra-ui/react'
 import heroImg from '../../images/coral_matt.jpg'
 import Logo from '../Logo'
 import Image from 'next/image'
-import Head from 'next/head'
 import styled from '@emotion/styled'
 
 const CoverImage = styled(Image)`
