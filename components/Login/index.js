@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Box, Button, Container, Input, InputGroup, IconButton, Text } from '@chakra-ui/react'
+import { Box, Button, Container, Input, InputGroup, IconButton, Text, Heading } from '@chakra-ui/react'
 import { ViewIcon, ViewOffIcon, ArrowForwardIcon } from '@chakra-ui/icons'
 import lockedImg from '../../images/locked.jpeg'
 import { setSession, setLoading } from '../../state/session'
@@ -36,6 +36,7 @@ const Login = () => {
     >
       <Container maxWidth={400} display="flex" flexDirection="column">
         <form onSubmit={handleLogin}>
+          <Heading size="md" color="white">Welcome to our wedding website</Heading>
           <Box alignItems="center" gap={3}>
             <InputGroup size="md" mb={4}>
               <Input
