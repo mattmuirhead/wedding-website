@@ -14,7 +14,7 @@ const Faqs = () => (
   <Container id="faqs" my={10}>
     <Heading size="lg" mb={4}>FAQs</Heading>
     <Text mb={4}>
-      We've put together some answers to some questions people keep asking us.
+      We&apos;ve put together some answers to some questions people keep asking us.
     </Text>
 
     <Accordion allowMultiple>

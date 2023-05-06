@@ -21,7 +21,7 @@ const Gifts = () => {
         <GridItem>
           <Flex direction="column" justifyContent="center" height="100%">
             <Heading size="lg" mb={4}>The Gift List</Heading>
-            <Text mb={4}>We don't want towels we want a sick honeymoon</Text>
+            <Text mb={4}>We don&apos;t want towels we want a sick honeymoon</Text>
           </Flex>
         </GridItem>
       </Grid>
