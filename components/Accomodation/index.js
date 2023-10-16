@@ -13,16 +13,22 @@ const Accomodation = () => {
         templateColumns={["repeat(1, 1fr)", "repeat(2, 1fr)"]} 
         gap={10}
       >
-        <GridItem order={[1, 0]}>
-          <Flex direction="column" justifyContent="center" height="100%" textAlign={['start', 'end']}>
-            <Heading size="lg" mb={4}>The Accomodation</Heading>
-            <Text mb={4}>There is a <Link href="https://www.premierinn.com/gb/en/hotels/england/kent/tonbridge/tonbridge.html" target="_blank">Premier Inn</Link> within 5 minutes walk</Text>
-          </Flex>
-        </GridItem>
         <GridItem>
           <Parallax speed={isMobile ? 0 : 5}>
             <Image src={oakTree.src} alt="Oak Tree Barn" />
           </Parallax>
+        </GridItem>
+        <GridItem>
+          <Flex direction="column" justifyContent="center" height="100%">
+            <Heading size="lg" mb={4}>The Accomodation</Heading>
+            <Text mb={4}>
+              There is a <Link target="_blank" href="https://maps.app.goo.gl/jWXrKLKUzs5npQig8">Premier Inn within 10 minute walk</Link> from the venue should you want to dance the night away!
+              <br /><br />
+              There is also another <Link target="_blank" href="https://maps.app.goo.gl/rQtJDGv8m64YUPWP7">Premier Inn within Tonbridge town centre</Link>. 
+              <br /><br />
+              None of the Premier Inns have blocked out bookings for our wedding so if you would like to stay overnight we would recommend booking as soon as you can.
+            </Text>
+          </Flex>
         </GridItem>
       </Grid>
     </Container>

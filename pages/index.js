@@ -3,7 +3,7 @@ import Nav from '/components/Nav'
 import Intro from '/components/Intro'
 import Wedding from '/components/Wedding'
 import Accomodation from '/components/Accomodation'
-import Gifts from '/components/Gifts'
+// import Gifts from '/components/Gifts'
 import Faqs from '/components/Faqs'
 import Rsvp from '/components/Rsvp'
 import Loading from '/components/Loading'
@@ -13,6 +13,7 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import localForage from 'localforage'
 import { setLoading, setSession } from '/state/session'
+import Location from '../components/Location'
 
 const Home = () => {
   const dispatch = useDispatch()
@@ -41,10 +42,11 @@ const Home = () => {
           <Nav />
           <Intro />
           <Wedding />
+          <Location />
           <Accomodation />
-          <Gifts />
-          <Faqs />
           <Rsvp />
+          {/* <Gifts /> */}
+          <Faqs />
           <ReturnToTop />
         </>
       ) : (

@@ -23,16 +23,16 @@ const handleClick = sectionName => {
 const FirstLinks = () => (
   <>
     <Link onClick={() => handleClick('wedding')}>Wedding</Link>
+    <Link onClick={() => handleClick('location')}>Location</Link>
     <Link onClick={() => handleClick('accomodation')}>Accomodation</Link>
-    <Link onClick={() => handleClick('gifts')}>Gifts</Link>
   </>
 )
 
 const SecondLinks = () => (
   <>
-    <Link onClick={() => handleClick('faqs')}>FAQs</Link>
     <Link onClick={() => handleClick('rsvp')}>RSVP</Link>
-    <Link onClick={() => handleClick('photos')}>Photos</Link>
+    <Link onClick={() => handleClick('gifts')}>Gifts</Link>
+    <Link onClick={() => handleClick('faqs')}>FAQs</Link>
   </>
 )
 

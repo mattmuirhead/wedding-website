@@ -13,16 +13,16 @@ const Gifts = () => {
         templateColumns={["repeat(1, 1fr)", "repeat(2, 1fr)"]} 
         gap={10}
       >
+        <GridItem order={[1, 0]}>
+          <Flex direction="column" justifyContent="center" height="100%" textAlign={['start', 'end']}>
+            <Heading size="lg" mb={4}>The Gift List</Heading>
+            <Text mb={4}>We don&apos;t want towels we want a sick honeymoon</Text>
+          </Flex>
+        </GridItem>
         <GridItem>
           <Parallax speed={isMobile ? 0 : 5}>
             <Image src={newZealand.src} alt="Oak Tree Barn" />
           </Parallax>
-        </GridItem>
-        <GridItem>
-          <Flex direction="column" justifyContent="center" height="100%">
-            <Heading size="lg" mb={4}>The Gift List</Heading>
-            <Text mb={4}>We don&apos;t want towels we want a sick honeymoon</Text>
-          </Flex>
         </GridItem>
       </Grid>
     </Container>
