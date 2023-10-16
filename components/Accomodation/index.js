@@ -1,7 +1,7 @@
 import { Container, Flex, Grid, GridItem, Heading, Image, Link, Text } from '@chakra-ui/react'
 import { Parallax } from 'react-scroll-parallax'
 import { useWindowSize } from '../../helpers/hooks'
-import oakTree from '../../images/oak_tree_2.jpeg'
+import oakTree from '../../images/oak_tree_3.jpeg'
 
 const Accomodation = () => {
   const { width } = useWindowSize()
