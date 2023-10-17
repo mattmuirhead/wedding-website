@@ -53,7 +53,7 @@ const Faqs = () => (
 
           <ul>
             <li>Canapes after the ceremony (this can be adjusted to suit dietary requirements)</li>
-            <li>We'll be having a picnic style wedding breakfast (who thought picnic and breakfast would go in the same sentence?!). But this isn't any picnic, this is a M&C picnic! It will be a selection of pastries, pies, cheese, meats, salads and more (this can be adjusted to suit dietary requirements).</li>
+            <li>We&apos;ll be having a picnic style wedding breakfast (who thought picnic and breakfast would go in the same sentence?!). But this isn&apos;t any picnic, this is a M&C picnic! It will be a selection of pastries, pies, cheese, meats, salads and more (this can be adjusted to suit dietary requirements).</li>
             <li>To keep you going in the evening, we will have pizza (we will make sure some pizzas are catered for dietary requirements).</li>
             <li>Plus some secret surprises!</li>
           </ul>
@@ -80,7 +80,7 @@ const Faqs = () => (
           <AccordionIcon />
         </AccordionButton>
         <AccordionPanel pb={4}>
-          While the barn is concrete flooring, most of the grounds, including where the ceremony is taking place, is either bark or grass so we wouldn't recommend a stiletto heel! Mainly, we want you to be comfortable so trainers are more than welcome!
+          While the barn is concrete flooring, most of the grounds, including where the ceremony is taking place, is either bark or grass so we wouldn&apos;t recommend a stiletto heel! Mainly, we want you to be comfortable so trainers are more than welcome!
         </AccordionPanel>
       </AccordionItem>
 
@@ -92,7 +92,7 @@ const Faqs = () => (
           <AccordionIcon />
         </AccordionButton>
         <AccordionPanel pb={4}>
-          While we always want to be welcoming, no plus ones are allowed unless we've stated on your invite.
+          While we always want to be welcoming, no plus ones are allowed unless we&apos;ve stated on your invite.
         </AccordionPanel>
       </AccordionItem>
 
@@ -104,7 +104,7 @@ const Faqs = () => (
           <AccordionIcon />
         </AccordionButton>
         <AccordionPanel pb={4}>
-          Unfortunately, as much as we'd like to invite all of our friends' children, we can only accommodate a few close family children. We hope that you will understand this decision and that you will still be able to join us on our special day.
+          Unfortunately, as much as we&apos;d like to invite all of our friends&apos; children, we can only accommodate a few close family children. We hope that you will understand this decision and that you will still be able to join us on our special day.
         </AccordionPanel>
       </AccordionItem>
     </Accordion>
