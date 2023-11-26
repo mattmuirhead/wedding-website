@@ -23,9 +23,11 @@ const Accomodation = () => {
             <Heading size="lg" mb={4}>The Accomodation</Heading>
             <Text mb={4}>
               There is a <Link target="_blank" href="https://maps.app.goo.gl/jWXrKLKUzs5npQig8">Premier Inn within 10 minute walk</Link> from the venue should you want to dance the night away!
-              <br /><br />
+            </Text>
+            <Text mb={4}>
               There is also another <Link target="_blank" href="https://maps.app.goo.gl/rQtJDGv8m64YUPWP7">Premier Inn within Tonbridge town centre</Link>. 
-              <br /><br />
+            </Text>
+            <Text mb={4}>
               None of the Premier Inns have blocked out bookings for our wedding so if you would like to stay overnight we would recommend booking as soon as you can.
             </Text>
           </Flex>

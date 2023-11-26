@@ -2,7 +2,6 @@ import { Container, Heading, Text } from '@chakra-ui/react'
 import logo from '../../images/logo.svg'
 
 const Logo = ({ color, size, ...otherProps }) => {
-  console.log(logo)
   const sizes = {
     sm: {
       heading: 'md',
@@ -18,8 +17,8 @@ const Logo = ({ color, size, ...otherProps }) => {
 
   return (
     <Container maxW="lg" centerContent m="auto" {...otherProps}>
-      <img src={logo.src} />
-      {size === 'lg' && <Text as="h2" fontSize={sizes[size].text} color={color}>28th September 2024</Text>}
+      <img src={logo.src} alt="Coral and Matt" />
+      {size === 'lg' && <Text fontSize={sizes[size].text} fontWeight={900} color={color} my={2}>28th September 2024</Text>}
     </Container>
   )
 }

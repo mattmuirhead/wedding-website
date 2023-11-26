@@ -14,27 +14,33 @@ import {
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import Logo from '../Logo'
+import styled from '@emotion/styled'
 
 const handleClick = sectionName => {
   const section = document.getElementById(sectionName)
   section.scrollIntoView({ behavior: 'smooth', block: 'start' })
 }
 
-const FirstLinks = () => (
+const NavLink = styled(Link)`
+  text-decoration: none !important;
+  font-family: 'CreativeVintageRegular', sans-serif;
+`
+
+const StyledContainer = styled(Container)`
+  background-color: var(--chakra-colors-chakra-body-bg);
+`
+
+const Links = () => (
   <>
-    <Link onClick={() => handleClick('wedding')}>Wedding</Link>
-    <Link onClick={() => handleClick('location')}>Location</Link>
-    <Link onClick={() => handleClick('accomodation')}>Accomodation</Link>
+    <NavLink onClick={() => handleClick('wedding')}>Wedding</NavLink>
+    <NavLink onClick={() => handleClick('location')}>Location</NavLink>
+    <NavLink onClick={() => handleClick('accomodation')}>Accomodation</NavLink>
+    <NavLink onClick={() => handleClick('rsvp')}>RSVP</NavLink>
+    <NavLink onClick={() => handleClick('gifts')}>Gifts</NavLink>
+    <NavLink onClick={() => handleClick('faqs')}>FAQs</NavLink>
   </>
 )
 
-const SecondLinks = () => (
-  <>
-    <Link onClick={() => handleClick('rsvp')}>RSVP</Link>
-    <Link onClick={() => handleClick('gifts')}>Gifts</Link>
-    <Link onClick={() => handleClick('faqs')}>FAQs</Link>
-  </>
-)
 
 const Nav = () => {
   const [isMobile] = useMediaQuery('(max-width: 700px)')
@@ -43,29 +49,18 @@ const Nav = () => {
 
 
   return (
-    <Container 
+    <StyledContainer 
       maxWidth={1100} 
       display="flex" 
       py={4}
       position="sticky" 
       top={-1} 
       alignItems="center"
-      background="white"
       zIndex={1}
     >
-      {!isMobile && 
-        <Box mr="auto" display="flex" flex={1} justifyContent="space-evenly">
-          <FirstLinks />
-        </Box>
-      }
-      <Logo size="sm" flex={0.5} />
-      {!isMobile && 
-        <Box ml="auto" display="flex" flex={1} justifyContent="space-evenly">
-          <SecondLinks />
-        </Box>
-      }
-      {isMobile &&
+      {isMobile ? (
         <>
+          <Logo size="sm" flex={0.5} />
           <HamburgerIcon boxSize={5} ref={btnRef} onClick={onOpen} />
           <Drawer
             isOpen={isOpen}
@@ -80,15 +75,18 @@ const Nav = () => {
 
               <DrawerBody display="flex">
                 <VStack m="auto">
-                  <FirstLinks />
-                  <SecondLinks />
+                  <Links />
                 </VStack>
               </DrawerBody>
             </DrawerContent>
           </Drawer>
         </>
-      }
-    </Container>
+      ) : (
+        <Box mr="auto" display="flex" flex={1} justifyContent="space-evenly">
+          <Links />
+        </Box>
+      )}
+    </StyledContainer>
   )
 }
 

@@ -18,6 +18,7 @@ const ReturnToTop = () => {
         onClick={handleClick}
         aria-label="Return to top" 
         icon={<ChevronUpIcon />} 
+        borderRadius={100}
       />
     </Box>
   )

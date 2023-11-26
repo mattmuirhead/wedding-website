@@ -23,9 +23,12 @@ const Faqs = () => (
           <AccordionIcon />
         </AccordionButton>
         <AccordionPanel pb={4}>
-          You can get Uber from the venue but we would recommend booking in advance.
-          <br /><br />
-          Unfortunately Uber is not available from the venue, however there are local taxi companies that you can use. We would also recommend booking in advance.
+          <Text mb={4}>
+            You can get Uber from the venue but we would recommend booking in advance.
+          </Text>
+          <Text mb={4}>
+            Unfortunately Uber is not available from the venue, however there are local taxi companies that you can use. We would also recommend booking in advance.
+          </Text>
         </AccordionPanel>
       </AccordionItem>
 
@@ -37,7 +40,9 @@ const Faqs = () => (
           <AccordionIcon />
         </AccordionButton>
         <AccordionPanel pb={4}>
-          There is a very small car park on the venue site which is free of charge.
+          <Text mb={4}>
+            There is a very small car park on the venue site which is free of charge.
+          </Text>
         </AccordionPanel>
       </AccordionItem>
 
@@ -49,7 +54,9 @@ const Faqs = () => (
           <AccordionIcon />
         </AccordionButton>
         <AccordionPanel pb={4}>
-          There will be lots of food throughout the day (We love food so this is also very important to us)
+          <Text mb={4}>
+            There will be lots of food throughout the day (We love food so this is also very important to us)
+          </Text>
 
           <ul>
             <li>Canapes after the ceremony (this can be adjusted to suit dietary requirements)</li>
@@ -68,7 +75,9 @@ const Faqs = () => (
           <AccordionIcon />
         </AccordionButton>
         <AccordionPanel pb={4}>
-          If you have any dietary requirements simply let us know when you RSVP and please be honest - we want you to enjoy the day as much as possible.
+          <Text mb={4}>
+            If you have any dietary requirements simply let us know when you RSVP and please be honest - we want you to enjoy the day as much as possible.
+          </Text>
         </AccordionPanel>
       </AccordionItem>
 
@@ -80,7 +89,9 @@ const Faqs = () => (
           <AccordionIcon />
         </AccordionButton>
         <AccordionPanel pb={4}>
-          While the barn is concrete flooring, most of the grounds, including where the ceremony is taking place, is either bark or grass so we wouldn&apos;t recommend a stiletto heel! Mainly, we want you to be comfortable so trainers are more than welcome!
+          <Text mb={4}>
+            While the barn is concrete flooring, most of the grounds, including where the ceremony is taking place, is either bark or grass so we wouldn&apos;t recommend a stiletto heel! Mainly, we want you to be comfortable so trainers are more than welcome!
+          </Text>
         </AccordionPanel>
       </AccordionItem>
 
@@ -92,7 +103,9 @@ const Faqs = () => (
           <AccordionIcon />
         </AccordionButton>
         <AccordionPanel pb={4}>
-          While we always want to be welcoming, no plus ones are allowed unless we&apos;ve stated on your invite.
+          <Text mb={4}>
+            While we always want to be welcoming, no plus ones are allowed unless we&apos;ve stated on your invite.
+          </Text>
         </AccordionPanel>
       </AccordionItem>
 
@@ -104,7 +117,9 @@ const Faqs = () => (
           <AccordionIcon />
         </AccordionButton>
         <AccordionPanel pb={4}>
-          Unfortunately, as much as we&apos;d like to invite all of our friends&apos; children, we can only accommodate a few close family children. We hope that you will understand this decision and that you will still be able to join us on our special day.
+          <Text mb={4}>
+            Unfortunately, as much as we&apos;d like to invite all of our friends&apos; children, we can only accommodate a few close family children. We hope that you will understand this decision and that you will still be able to join us on our special day.
+          </Text>
         </AccordionPanel>
       </AccordionItem>
     </Accordion>

@@ -30,7 +30,8 @@ const Location = () => {
 
             <Text mb={4}>
               Oak tree barn is situated just off of the A21, with easy access to the M25.
-              <br /><br />
+            </Text>
+            <Text mb={4}>
               The nearest train station is Tonbridge station (Barden Rd, Tonbridge TN9 1TT). From the station it is a 3 minute drive or a 30 minute walk.
             </Text>
           </Flex>
