@@ -21,7 +21,7 @@ const handleClick = sectionName => {
   section.scrollIntoView({ behavior: 'smooth', block: 'start' })
 }
 
-const NavLink = styled(Link)`
+const StyledLink = styled(Link)`
   text-decoration: none !important;
   font-family: 'CreativeVintageRegular', sans-serif;
 `
@@ -30,14 +30,25 @@ const StyledContainer = styled(Container)`
   background-color: var(--chakra-colors-chakra-body-bg);
 `
 
-const Links = () => (
+const NavLink = ({ isMobile, onClick, location, label }) => (
+  <StyledLink 
+    fontSize={isMobile ? 26 : 16} 
+    onClick={() => {
+      onClick()
+      handleClick(location)
+    }}>
+    {label}
+  </StyledLink>
+)
+
+const Links = ({ isMobile, onClick }) => (
   <>
-    <NavLink onClick={() => handleClick('wedding')}>Wedding</NavLink>
-    <NavLink onClick={() => handleClick('location')}>Location</NavLink>
-    <NavLink onClick={() => handleClick('accomodation')}>Accomodation</NavLink>
-    <NavLink onClick={() => handleClick('rsvp')}>RSVP</NavLink>
-    <NavLink onClick={() => handleClick('gifts')}>Gifts</NavLink>
-    <NavLink onClick={() => handleClick('faqs')}>FAQs</NavLink>
+    <NavLink isMobile={isMobile} onClick={onClick} location="wedding" label="Wedding" />
+    <NavLink isMobile={isMobile} onClick={onClick} location="location" label="Location" />
+    <NavLink isMobile={isMobile} onClick={onClick} location="accomodation" label="Accomodation" />
+    <NavLink isMobile={isMobile} onClick={onClick} location="rsvp" label="RSVP" />
+    <NavLink isMobile={isMobile} onClick={onClick} location="gifts" label="Gifts" />
+    <NavLink isMobile={isMobile} onClick={onClick} location="faqs" label="FAQs" />
   </>
 )
 
@@ -71,11 +82,11 @@ const Nav = () => {
           >
             <DrawerOverlay />
             <DrawerContent>
-              <DrawerCloseButton />
+              <DrawerCloseButton borderRadius={100} />
 
               <DrawerBody display="flex">
                 <VStack m="auto">
-                  <Links />
+                  <Links isMobile onClick={onClose} />
                 </VStack>
               </DrawerBody>
             </DrawerContent>
