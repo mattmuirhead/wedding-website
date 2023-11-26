@@ -58,7 +58,7 @@ const Nav = () => {
           <FirstLinks />
         </Box>
       }
-      <Logo size="sm" flex={0} />
+      <Logo size="sm" flex={0.5} />
       {!isMobile && 
         <Box ml="auto" display="flex" flex={1} justifyContent="space-evenly">
           <SecondLinks />

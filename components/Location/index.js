@@ -37,7 +37,7 @@ const Location = () => {
         </GridItem>
         <GridItem>
           <Parallax speed={isMobile ? 0 : 5}>
-            <Image src={oakTree.src} alt="Oak Tree Barn" />
+            <Image src={oakTree.src} alt="Oak Tree Barn" borderRadius={20} />
           </Parallax>
         </GridItem>
       </Grid>
