@@ -6,6 +6,7 @@ import Accomodation from '/components/Accomodation'
 // import Gifts from '/components/Gifts'
 import Faqs from '/components/Faqs'
 import Rsvp from '/components/Rsvp'
+import Footer from '/components/Footer'
 import Loading from '/components/Loading'
 import ReturnToTop from '/components/ReturnToTop'
 import Login from '/components/Login'
@@ -47,6 +48,7 @@ const Home = () => {
           <Rsvp />
           {/* <Gifts /> */}
           <Faqs />
+          <Footer />
           <ReturnToTop />
         </>
       ) : (

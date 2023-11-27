@@ -4,8 +4,13 @@
 }
 
 :root[data-theme=light], [data-theme][data-theme=light] {
-  --chakra-colors-chakra-body-text: #446a46 !important;
-  --chakra-colors-chakra-body-bg: #fef7fa !important;
+  --primary: #fbfcfb;
+  --secondary: #446a46;
+  --tertiary: #215122;
+
+
+  --chakra-colors-chakra-body-text: var(--secondary) !important;
+  --chakra-colors-chakra-body-bg: var(--primary) !important;
 }
 
 html,

@@ -1,8 +1,12 @@
 import { Box } from '@chakra-ui/react'
-import heroImg from '../../images/coral_matt.jpg'
 import Logo from '../Logo'
 import Image from 'next/image'
 import styled from '@emotion/styled'
+
+import Img500 from '../../images/coralmatt/coral_matt_tfxbiv_c_scale,w_500.jpg'
+import Img1078 from '../../images/coralmatt/coral_matt_tfxbiv_c_scale,w_1078.jpg'
+import Img1503 from '../../images/coralmatt/coral_matt_tfxbiv_c_scale,w_1503.jpg'
+import Img1690 from '../../images/coralmatt/coral_matt_tfxbiv_c_scale,w_1690.jpg'
 
 const CoverImage = styled(Image)`
   position: absolute;
@@ -38,7 +42,19 @@ const HeroImage = () => {
       alignItems="center"
       position="relative"
     >
-      <CoverImage src={heroImg} alt="Coral & Matt" priority />
+      <picture>
+        <CoverImage
+          fill
+          sizes="(max-width: 1690px) 100vw, 1690px"
+          srcset={`
+          ${Img500.src} 500w,
+          ${Img1078.src} 1078w,
+          ${Img1503.src} 1503w,
+          ${Img1690.src} 1690w`}
+          src={Img1690.src}
+          alt=""/>
+      </picture>
+
       <Logo color="white" />
 
       <Mask viewBox="0 0 1440 120" version="1.1">

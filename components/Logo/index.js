@@ -1,4 +1,4 @@
-import { Container, Heading, Text } from '@chakra-ui/react'
+import { Container, Text } from '@chakra-ui/react'
 import logo from '../../images/logo.svg'
 
 const Logo = ({ color, size, ...otherProps }) => {
