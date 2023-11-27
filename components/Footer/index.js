@@ -17,7 +17,7 @@ const Footer = () => (
     </Mask>
 
     <Wrapper>
-      <Container pt={5} pb={10} maxWidth={150}>
+      <Container pt={[5, 0]} pb={10} maxWidth={150}>
         <img src={logo.src} alt="Coral and Matt" />
       </Container>
     </Wrapper>
