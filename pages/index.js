@@ -15,6 +15,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import localForage from 'localforage'
 import { setLoading, setSession } from '/state/session'
 import Location from '../components/Location'
+import Head from 'next/head'
 
 const Home = () => {
   const dispatch = useDispatch()
@@ -36,6 +37,11 @@ const Home = () => {
 
   return (
     <>
+      <Head>
+        <title>Coral & Matts Wedding</title>
+        <meta name="description" content="We're getting married!!!" />
+        <meta name="author" content="Matt Muirhead" />
+      </Head>
       {isLoading && <Loading />}
       {user?.id ? (
         <>
