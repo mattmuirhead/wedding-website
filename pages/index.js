@@ -39,6 +39,7 @@ const Home = () => {
     <>
       <Head>
         <title>Coral & Matts Wedding</title>
+        <link rel="shortcut icon" href="/favicon.ico" />
         <meta name="description" content="We're getting married!!!" />
         <meta name="author" content="Matt Muirhead" />
       </Head>
