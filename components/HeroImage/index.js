@@ -46,7 +46,7 @@ const HeroImage = () => {
         <CoverImage
           fill
           sizes="(max-width: 1690px) 100vw, 1690px"
-          srcset={`
+          srcSet={`
           ${Img500.src} 500w,
           ${Img1078.src} 1078w,
           ${Img1503.src} 1503w,
