@@ -1,16 +1,20 @@
 import { 
-  Container, 
-  Text, 
-  Heading 
+  Box,
+  Container
 } from '@chakra-ui/react'
+import JotformEmbed from 'react-jotform-embed';
+import styled from '@emotion/styled'
+
+const StyledBox = styled(Box)`
+  background-color: var(--secondary);
+`
 
 const Rsvp = () => (
-  <Container id="rsvp" my={10}>
-    <Heading size="lg" mb={4}>RSVP</Heading>
-    <Text mb={4}>
-      Tell us you&apos;re coming, or not it&apos;s fine we won&apos;t get offended!
-    </Text>
-  </Container>
+  <StyledBox id="rsvp" my={10}>
+    <Container>
+      <JotformEmbed src="https://form.jotformeu.com/233424225825049" />
+    </Container>
+  </StyledBox>
 )
 
 export default Rsvp
