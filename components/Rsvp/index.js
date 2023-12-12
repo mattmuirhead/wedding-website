@@ -7,6 +7,7 @@ import styled from '@emotion/styled'
 
 const StyledBox = styled(Box)`
   background-color: var(--secondary);
+  overflow: hidden;
 `
 
 const Rsvp = () => (

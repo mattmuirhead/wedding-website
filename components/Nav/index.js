@@ -26,7 +26,7 @@ const StyledLink = styled(Link)`
   font-family: 'CreativeVintageRegular', sans-serif;
 `
 
-const StyledContainer = styled(Container)`
+const StyledBox = styled(Box)`
   background-color: var(--chakra-colors-chakra-body-bg);
 `
 
@@ -60,44 +60,45 @@ const Nav = () => {
 
 
   return (
-    <StyledContainer 
-      maxWidth={1100} 
+    <StyledBox
       display="flex" 
       py={4}
       position="sticky" 
       top={-1} 
       alignItems="center"
       zIndex={1}
-    >
-      {isMobile ? (
-        <>
-          <Logo size="sm" flex={0.5} />
-          <HamburgerIcon boxSize={5} ref={btnRef} onClick={onOpen} />
-          <Drawer
-            isOpen={isOpen}
-            placement="right"
-            size="full"
-            onClose={onClose}
-            finalFocusRef={btnRef}
-          >
-            <DrawerOverlay />
-            <DrawerContent>
-              <DrawerCloseButton borderRadius={100} />
+      >
+      <Container maxWidth={1100}>
+        {isMobile ? (
+          <>
+            <Logo size="sm" flex={0.5} />
+            <HamburgerIcon boxSize={5} ref={btnRef} onClick={onOpen} />
+            <Drawer
+              isOpen={isOpen}
+              placement="right"
+              size="full"
+              onClose={onClose}
+              finalFocusRef={btnRef}
+            >
+              <DrawerOverlay />
+              <DrawerContent>
+                <DrawerCloseButton borderRadius={100} />
 
-              <DrawerBody display="flex">
-                <VStack m="auto">
-                  <Links isMobile onClick={onClose} />
-                </VStack>
-              </DrawerBody>
-            </DrawerContent>
-          </Drawer>
-        </>
-      ) : (
-        <Box mr="auto" display="flex" flex={1} justifyContent="space-evenly">
-          <Links />
-        </Box>
-      )}
-    </StyledContainer>
+                <DrawerBody display="flex">
+                  <VStack m="auto">
+                    <Links isMobile onClick={onClose} />
+                  </VStack>
+                </DrawerBody>
+              </DrawerContent>
+            </Drawer>
+          </>
+        ) : (
+          <Box mr="auto" display="flex" flex={1} justifyContent="space-evenly">
+            <Links />
+          </Box>
+        )}
+      </Container>
+    </StyledBox>
   )
 }
 
