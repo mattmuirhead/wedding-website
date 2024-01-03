@@ -66,9 +66,9 @@ const Nav = () => {
       position="sticky" 
       top={-1} 
       alignItems="center"
-      zIndex={1}
+      zIndex={2}
       >
-      <Container maxWidth={1100}>
+      <Container maxWidth={1100} display="flex" alignItems="center">
         {isMobile ? (
           <>
             <Logo size="sm" flex={0.5} />

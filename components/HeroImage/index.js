@@ -21,8 +21,8 @@ const CoverImage = styled(Image)`
 const Mask = styled.svg`
   position: absolute;
   bottom: -2px;
-  left: 0;
-  right: 0;
+  left: -2px;
+  right: -2px;
   z-index: 1;
   fill: var(--chakra-colors-chakra-body-bg);
 `
