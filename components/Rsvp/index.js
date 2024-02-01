@@ -61,8 +61,8 @@ const Rsvp = () => {
         <FormControl as="fieldset" my={10} display="flex" justifyContent={['flex-start', 'center']}>
           <RadioGroup name="attending" value={attending} onChange={setAttending}>
             <Stack direction={['column', 'row']} spacing={[2, 6]}>
-              <Radio value="true">WE'RE IN!</Radio>
-              <Radio value="false">WE CAN'T MAKE IT</Radio>
+              <Radio value="true">WE&apos;RE IN!</Radio>
+              <Radio value="false">WE CAN&apos;T MAKE IT</Radio>
             </Stack>
           </RadioGroup>
         </FormControl>
