@@ -30,25 +30,25 @@ const StyledBox = styled(Box)`
   background-color: var(--chakra-colors-chakra-body-bg);
 `
 
-const NavLink = ({ isMobile, onClick, location, label }) => (
+const NavLink = ({ isMobile, onClose, location, label }) => (
   <StyledLink 
     fontSize={isMobile ? 26 : 16} 
     onClick={() => {
-      onClick()
+      onClose?.()
       handleClick(location)
     }}>
     {label}
   </StyledLink>
 )
 
-const Links = ({ isMobile, onClick }) => (
+const Links = ({ isMobile, onClose }) => (
   <>
-    <NavLink isMobile={isMobile} onClick={onClick} location="wedding" label="Wedding" />
-    <NavLink isMobile={isMobile} onClick={onClick} location="location" label="Location" />
-    <NavLink isMobile={isMobile} onClick={onClick} location="accomodation" label="Accomodation" />
-    <NavLink isMobile={isMobile} onClick={onClick} location="rsvp" label="RSVP" />
-    <NavLink isMobile={isMobile} onClick={onClick} location="gifts" label="Gifts" />
-    <NavLink isMobile={isMobile} onClick={onClick} location="faqs" label="FAQs" />
+    <NavLink isMobile={isMobile} onClose={onClose} location="wedding" label="Wedding" />
+    <NavLink isMobile={isMobile} onClose={onClose} location="location" label="Location" />
+    <NavLink isMobile={isMobile} onClose={onClose} location="accomodation" label="Accomodation" />
+    <NavLink isMobile={isMobile} onClose={onClose} location="rsvp" label="RSVP" />
+    <NavLink isMobile={isMobile} onClose={onClose} location="gifts" label="Gifts" />
+    <NavLink isMobile={isMobile} onClose={onClose} location="faqs" label="FAQs" />
   </>
 )
 
@@ -86,7 +86,7 @@ const Nav = () => {
 
                 <DrawerBody display="flex">
                   <VStack m="auto">
-                    <Links isMobile onClick={onClose} />
+                    <Links isMobile onClose={onClose} />
                   </VStack>
                 </DrawerBody>
               </DrawerContent>

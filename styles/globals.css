@@ -7,6 +7,7 @@
   --primary: #f1f4f2;
   --secondary: #446a46;
   --tertiary: #215122;
+  --highlight: #fdc3dc;
 
 
   --chakra-colors-chakra-body-text: var(--secondary) !important;
@@ -48,5 +49,28 @@ ul li {
 }
 
 *::selection {
-  background-color: #ffc4dd;
+  background-color: var(--highlight);
+}
+
+.chakra-form-control .chakra-radio__control {
+  background-color: var(--tertiary) !important;
+  border-color: var(--tertiary) !important;
+  width: 30px;
+  height: 30px;
+}
+
+.chakra-form-control .chakra-radio__control[data-checked]:before,
+.chakra-form-control .chakra-radio__control[data-hover]:before {
+  background-color: var(--highlight);
+}
+
+.chakra-form-control .chakra-input,
+.chakra-form-control .chakra-textarea {
+  border-bottom: 1px dashed;
+  border-color: var(--primary) !important;
+  box-shadow: none !important;
+}
+
+form .chakra-button:hover {
+  color: var(--tertiary);
 }

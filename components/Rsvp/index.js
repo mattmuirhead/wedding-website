@@ -6,11 +6,13 @@ import {
   FormControl,
   FormLabel,
   RadioGroup,
-  HStack,
+  Stack,
   Radio,
   Textarea,
+  Input,
 } from '@chakra-ui/react'
 import styled from '@emotion/styled'
+import { useState } from 'react'
 
 const StyledBox = styled(Box)`
   background-color: var(--secondary);
@@ -18,61 +20,68 @@ const StyledBox = styled(Box)`
   overflow: hidden;
   position: relative;
 `
-const MaskTop = styled.svg`
-  position: absolute;
-  top: -2px;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  fill: var(--chakra-colors-chakra-body-bg);
-  transform: rotate(180deg);
-  pointer-events: none;
-`
-const MaskBottom = styled.svg`
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  fill: var(--chakra-colors-chakra-body-bg);
-  pointer-events: none;
-`
 
-const Rsvp = () => (
-  <StyledBox id="rsvp" my={10}>
-    <MaskTop viewBox="0 0 1440 120" version="1.1">
-      <path d="M0,60L60,70C120,80,240,100,360,92.5C480,85,600,50,720,45C840,40,960,65,1080,75C1200,85,1320,80,1440,65C1560,50,1680,25,1800,32.5C1920,40,2040,80,2160,90C2280,100,2400,80,2520,80C2640,80,2760,100,2880,90C3000,80,3120,40,3240,25C3360,10,3480,20,3600,40C3720,60,3840,90,3960,90C4080,90,4200,60,4320,40C4440,20,4560,10,4680,15C4800,20,4920,40,5040,47.5C5160,55,5280,50,5400,57.5C5520,65,5640,85,5760,97.5C5880,110,6000,115,6120,100C6240,85,6360,50,6480,30C6600,10,6720,5,6840,17.5C6960,30,7080,60,7200,77.5C7320,95,7440,100,7560,87.5C7680,75,7800,45,7920,37.5C8040,30,8160,45,8280,62.5C8400,80,8520,100,8580,110L8640,120L8640,150L8580,150C8520,150,8400,150,8280,150C8160,150,8040,150,7920,150C7800,150,7680,150,7560,150C7440,150,7320,150,7200,150C7080,150,6960,150,6840,150C6720,150,6600,150,6480,150C6360,150,6240,150,6120,150C6000,150,5880,150,5760,150C5640,150,5520,150,5400,150C5280,150,5160,150,5040,150C4920,150,4800,150,4680,150C4560,150,4440,150,4320,150C4200,150,4080,150,3960,150C3840,150,3720,150,3600,150C3480,150,3360,150,3240,150C3120,150,3000,150,2880,150C2760,150,2640,150,2520,150C2400,150,2280,150,2160,150C2040,150,1920,150,1800,150C1680,150,1560,150,1440,150C1320,150,1200,150,1080,150C960,150,840,150,720,150C600,150,480,150,360,150C240,150,120,150,60,150L0,150Z"></path>
-    </MaskTop>
-    <Container id="faqs" my={20}>
-      <Heading size="lg" mb={4}>RSVP</Heading>
+const Rsvp = () => {
+  const [name, setName] = useState();
+  const [attending, setAttending] = useState();
+  const [dietaryReqs, setDietaryReqs] = useState();
 
-      <form name="rsvp" netlify>
-        <FormControl as="fieldset" mb={2}>
-          <FormLabel as="legend">
-            Will you be attending?
-          </FormLabel>
-          <RadioGroup defaultValue='Itachi'>
-            <HStack spacing='24px'>
-              <Radio value="Yes">Yes</Radio>
-              <Radio value="No">No</Radio>
-            </HStack>
+  const isAttending = attending === 'true';
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const myForm = event.target;
+    const formData = new FormData(myForm);
+    
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => console.log("Form successfully submitted"))
+      .catch((error) => alert(error));
+  }
+
+  return (
+  <StyledBox id="rsvp" my={10} p={10}>
+    <Container>
+      <Heading size="lg" mb={4}>You in?</Heading>
+
+      <form name="rsvp" netlify onSubmit={handleSubmit}>
+        <FormControl as="fieldset" mb={4}>
+          <Stack direction={['column', 'row']} spacing={[0, 2]}>
+            <FormLabel as="legend">
+              NAME(S):
+            </FormLabel>
+            <Input variant="flushed" size="sm" name="names" value={name} onChange={e => setName(e.target.value)} />
+          </Stack>
+        </FormControl>
+
+        <FormControl as="fieldset" my={10} display="flex" justifyContent={['flex-start', 'center']}>
+          <RadioGroup name="attending" value={attending} onChange={setAttending}>
+            <Stack direction={['column', 'row']} spacing={[2, 6]}>
+              <Radio value="true">WE'RE IN!</Radio>
+              <Radio value="false">WE CAN'T MAKE IT</Radio>
+            </Stack>
           </RadioGroup>
         </FormControl>
 
-        <FormControl as="fieldset" mb={4}>
-          <FormLabel as="legend">
-            Do you have any dietry requirements?
-          </FormLabel>
-          <Textarea />
-        </FormControl>
+        {isAttending ? (
+          <FormControl as="fieldset" mb={8}>
+            <FormLabel as="legend" textAlign={['left', 'center']}>
+              LET US KNOW IF YOU HAVE ANY DIETARY REQUIREMENTS!
+            </FormLabel>
+            <Textarea variant="flushed" rows={1} name="dietaryReqs" value={dietaryReqs} onChange={e => setDietaryReqs(e.target.value)} />
+          </FormControl>
+        ) : undefined}
 
-        <Button type="submit" variant="outline">Submit</Button>
+        <Box display="flex" justifyContent="center">
+          {!!attending && <Button type="submit" variant="outline">{isAttending ? 'Confirm' : 'Confirm to sacrificing your friendship with us'}</Button>}
+        </Box>
       </form>
     </Container>
-    <MaskBottom viewBox="0 0 1440 120" version="1.1">
-      <path d="M0,60L60,70C120,80,240,100,360,92.5C480,85,600,50,720,45C840,40,960,65,1080,75C1200,85,1320,80,1440,65C1560,50,1680,25,1800,32.5C1920,40,2040,80,2160,90C2280,100,2400,80,2520,80C2640,80,2760,100,2880,90C3000,80,3120,40,3240,25C3360,10,3480,20,3600,40C3720,60,3840,90,3960,90C4080,90,4200,60,4320,40C4440,20,4560,10,4680,15C4800,20,4920,40,5040,47.5C5160,55,5280,50,5400,57.5C5520,65,5640,85,5760,97.5C5880,110,6000,115,6120,100C6240,85,6360,50,6480,30C6600,10,6720,5,6840,17.5C6960,30,7080,60,7200,77.5C7320,95,7440,100,7560,87.5C7680,75,7800,45,7920,37.5C8040,30,8160,45,8280,62.5C8400,80,8520,100,8580,110L8640,120L8640,150L8580,150C8520,150,8400,150,8280,150C8160,150,8040,150,7920,150C7800,150,7680,150,7560,150C7440,150,7320,150,7200,150C7080,150,6960,150,6840,150C6720,150,6600,150,6480,150C6360,150,6240,150,6120,150C6000,150,5880,150,5760,150C5640,150,5520,150,5400,150C5280,150,5160,150,5040,150C4920,150,4800,150,4680,150C4560,150,4440,150,4320,150C4200,150,4080,150,3960,150C3840,150,3720,150,3600,150C3480,150,3360,150,3240,150C3120,150,3000,150,2880,150C2760,150,2640,150,2520,150C2400,150,2280,150,2160,150C2040,150,1920,150,1800,150C1680,150,1560,150,1440,150C1320,150,1200,150,1080,150C960,150,840,150,720,150C600,150,480,150,360,150C240,150,120,150,60,150L0,150Z"></path>
-    </MaskBottom>
   </StyledBox>
-)
+)}
 
 export default Rsvp
