@@ -1,3 +1,4 @@
+import React from 'react'
 import { 
   Box,
   Button,
@@ -27,7 +28,7 @@ const encode = (data) => {
     .join("&");
 };
 
-const Rsvp = () => {
+const Rsvp = React.memo(() => {
   const [name, setName] = useState('');
   const [attending, setAttending] = useState();
   const [dietaryReqs, setDietaryReqs] = useState('');
@@ -35,7 +36,7 @@ const Rsvp = () => {
 
   const isAttending = attending === 'true';
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     const formData = {
@@ -44,7 +45,7 @@ const Rsvp = () => {
       dietaryReqs,
     }
     
-    fetch("/", {
+    await fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "rsvp", ...formData }),
@@ -61,13 +62,14 @@ const Rsvp = () => {
       ) : (
         <>
           <Heading size="lg" mb={4}>You in?</Heading>
+
           <form 
             method="POST"
             name="rsvp"
-            data-netlify="true"
             onSubmit={handleSubmit}
           >
             <input type="hidden" name="form-name" value="rsvp" />
+
             <FormControl as="fieldset" mb={4}>
               <Stack direction={['column', 'row']} spacing={[0, 2]}>
                 <FormLabel as="legend">
@@ -103,6 +105,6 @@ const Rsvp = () => {
       )}
     </Container>
   </StyledBox>
-)}
+)})
 
 export default Rsvp
