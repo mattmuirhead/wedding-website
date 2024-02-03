@@ -24,7 +24,10 @@ const Home = () => {
   const loading = useSelector(state => state?.session?.loading)
 
   const [storedUser, setStoredUser] = useState()
-  localForage.getItem('user').then(user => setStoredUser(user))
+
+  useEffect(() => {
+    localForage.getItem('user').then(user => setStoredUser(user))
+  }, [])
 
   useEffect(() => {
     !user?.id && !!storedUser?.id && dispatch(setSession(storedUser))

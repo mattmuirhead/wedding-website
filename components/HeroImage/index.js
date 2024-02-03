@@ -38,6 +38,7 @@ const HeroImage = () => {
       alignItems="center"
       position="relative"
       backgroundColor="black"
+      overflow="hidden"
     >
       <picture>
         <CoverImage

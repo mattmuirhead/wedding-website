@@ -28,9 +28,9 @@ const encode = (data) => {
 };
 
 const Rsvp = () => {
-  const [name, setName] = useState();
+  const [name, setName] = useState('');
   const [attending, setAttending] = useState();
-  const [dietaryReqs, setDietaryReqs] = useState();
+  const [dietaryReqs, setDietaryReqs] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
   const isAttending = attending === 'true';
