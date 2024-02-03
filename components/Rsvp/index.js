@@ -58,7 +58,13 @@ const Rsvp = React.memo(() => {
   <StyledBox id="rsvp" my={10} p={10}>
     <Container>
       {submitted ? (
-        <>Submitted</>
+        <Heading size="md" my={4} textAlign="center">
+          {isAttending ? (
+            <>Woo! Thanks {names}, we can't wait to celebrate with you! See you on the 28th September 2024!!</>
+          ) : (
+            <>Friendship sacrificed, goodbye.</>
+          )}
+        </Heading>
       ) : (
         <>
           <Heading size="lg" mb={4}>You in?</Heading>
