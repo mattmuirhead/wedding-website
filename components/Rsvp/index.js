@@ -29,7 +29,7 @@ const encode = (data) => {
 };
 
 const Rsvp = React.memo(() => {
-  const [name, setName] = useState('');
+  const [names, setNames] = useState('');
   const [attending, setAttending] = useState();
   const [dietaryReqs, setDietaryReqs] = useState('');
   const [submitted, setSubmitted] = useState(false);
@@ -40,7 +40,7 @@ const Rsvp = React.memo(() => {
     event.preventDefault();
 
     const formData = {
-      name,
+      names,
       attending,
       dietaryReqs,
     }
@@ -76,7 +76,7 @@ const Rsvp = React.memo(() => {
                 <FormLabel as="legend">
                   NAME(S):
                 </FormLabel>
-                <Input variant="flushed" size="sm" name="names" value={name} onChange={e => setName(e.target.value)} />
+                <Input variant="flushed" size="sm" name="names" value={names} onChange={e => setNames(e.target.value)} />
               </Stack>
             </FormControl>
 
