@@ -5,12 +5,10 @@ const Logo = ({ color, size, ...otherProps }) => {
   const sizes = {
     sm: {
       heading: 'md',
-      ampersand: 'xl',
       text: 'sm',
     },
     lg: {
       heading: '2xl',
-      ampersand: '4xl',
       text: 'xl',
     },
   }

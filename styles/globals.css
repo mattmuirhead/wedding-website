@@ -74,3 +74,20 @@ ul li {
 form .chakra-button:hover {
   color: var(--tertiary);
 }
+
+.login-page .chakra-form-control .chakra-input{
+  border-bottom: 1px solid;
+  border-color: var(--tertiary) !important;
+  box-shadow: none !important;
+}
+
+.login-page form .chakra-button {
+  border-color: var(--tertiary);
+  background-color: var(--tertiary);
+  color: var(--primary);
+  border-radius: 100%;
+}
+
+.login-page form .chakra-button:hover {
+  background-color: var(--tertiary);
+}

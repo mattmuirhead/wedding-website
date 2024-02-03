@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import { Box, Button, Container, Input, InputGroup, IconButton, Text, Heading } from '@chakra-ui/react'
-import { ViewIcon, ViewOffIcon, ArrowForwardIcon } from '@chakra-ui/icons'
-import lockedImg from '../../images/locked.jpeg'
+import { Box, Container, FormControl, Input, InputGroup, Text, IconButton } from '@chakra-ui/react'
 import { setSession, setLoading } from '../../state/session'
 import { useDispatch } from 'react-redux'
 import { login } from '../../helpers/login'
+import Logo from '../Logo'
+import { ArrowForwardIcon } from '@chakra-ui/icons'
 
 const Login = () => {
   const dispatch = useDispatch()
@@ -27,26 +27,24 @@ const Login = () => {
       display="flex"
       width="100%" 
       height="100vh" 
-      backgroundImage={`linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url(${lockedImg.src})`}
       backgroundPosition="center"
       backgroundSize="cover"
       backgroundAttachment="fixed"
       justifyContent="center"
       alignItems="center"
+      className="login-page"
     >
       <Container maxWidth={400} display="flex" flexDirection="column">
         <form onSubmit={handleLogin}>
-          <Heading size="md" color="white">Welcome to our wedding website</Heading>
-          <Box alignItems="center" gap={3}>
-            <InputGroup size="md" mb={4}>
+          <Logo size="sm" />
+          <Text size="md" textAlign="center" my={4}>28th September 2024</Text>
+          <FormControl alignItems="center">
+            <InputGroup size="md" mb={4} gap={4}>
               <Input
                 isInvalid={error}
                 pr="3rem"
                 type="password"
                 placeholder="Password"
-                size="lg" 
-                focusBorderColor="white"
-                color="white"
                 value={passcode}
                 variant="flushed"
                 onChange={e => {
@@ -54,12 +52,15 @@ const Login = () => {
                   setPasscode(e.target.value)
                 }}
               />
-            </InputGroup>
 
-            <Button type="submit" aria-label="Enter">
-              Enter
-            </Button>
-          </Box>
+              <IconButton
+                type="submit" 
+                aria-label="Enter"
+                icon={<ArrowForwardIcon />}
+                disabled={!passcode}
+              />
+            </InputGroup>
+          </FormControl>
 
           <Text color="red" mb={4} height={8}>{!!error && <>Incorrect passcode</>}</Text>
         </form>
