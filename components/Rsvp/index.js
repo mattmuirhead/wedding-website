@@ -107,4 +107,6 @@ const Rsvp = React.memo(() => {
   </StyledBox>
 )})
 
+Rsvp.displayName = 'Rsvp';
+
 export default Rsvp
