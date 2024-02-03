@@ -66,6 +66,7 @@ const Rsvp = React.memo(() => {
           <form 
             method="POST"
             name="rsvp"
+            netlify="true"
             onSubmit={handleSubmit}
           >
             <input type="hidden" name="form-name" value="rsvp" />
