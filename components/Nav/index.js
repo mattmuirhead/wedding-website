@@ -18,7 +18,7 @@ import styled from '@emotion/styled'
 
 const handleClick = sectionName => {
   const section = document.getElementById(sectionName)
-  section.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  section.scrollIntoView({ behavior: 'smooth', block: 'center' })
 }
 
 const StyledLink = styled(Link)`

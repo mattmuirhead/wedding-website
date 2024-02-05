@@ -1,5 +1,5 @@
 import { Box, IconButton } from '@chakra-ui/react'
-import { ChevronUpIcon } from '@chakra-ui/icons'
+import { ArrowUpIcon } from '@chakra-ui/icons'
 
 const ReturnToTop = () => {
   const handleClick = event => {
@@ -15,9 +15,10 @@ const ReturnToTop = () => {
       bottom={10}
     >
       <IconButton 
+        className="returnToTop"
         onClick={handleClick}
         aria-label="Return to top" 
-        icon={<ChevronUpIcon />} 
+        icon={<ArrowUpIcon />} 
         borderRadius={100}
       />
     </Box>

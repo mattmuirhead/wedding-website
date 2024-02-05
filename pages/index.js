@@ -3,7 +3,7 @@ import Nav from '/components/Nav'
 import Intro from '/components/Intro'
 import Wedding from '/components/Wedding'
 import Accomodation from '/components/Accomodation'
-// import Gifts from '/components/Gifts'
+import Gifts from '/components/Gifts'
 import Faqs from '/components/Faqs'
 import Rsvp from '/components/Rsvp'
 import Footer from '/components/Footer'
@@ -56,7 +56,7 @@ const Home = () => {
           <Location />
           <Accomodation />
           <Rsvp />
-          {/* <Gifts /> */}
+          <Gifts />
           <Faqs />
           <Footer />
           <ReturnToTop />

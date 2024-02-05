@@ -32,7 +32,7 @@ a {
 
 a:hover {
   text-decoration: none !important;
-  background-color: #ffc4dd;
+  background-color: var(--highlight);
 }
 
 ul {
@@ -71,8 +71,9 @@ ul li {
   box-shadow: none !important;
 }
 
-form .chakra-button:hover {
-  color: var(--tertiary);
+form .chakra-button {
+  border: 2px solid;
+  border-color: var(--primary);
 }
 
 .login-page .chakra-form-control .chakra-input{
@@ -90,4 +91,22 @@ form .chakra-button:hover {
 
 .login-page form .chakra-button:hover {
   background-color: var(--tertiary);
+}
+
+.returnToTop,
+.returnToTop:hover {
+  background-color: var(--primary) !important;
+}
+
+a.greenButton,
+button.greenButton {
+  border: 2px solid var(--secondary);
+  text-decoration: none !important;
+}
+
+form .chakra-button:hover,
+a.greenButton:hover,
+button.greenButton:hover {
+  transform: scale(0.97);
+  background-color: transparent;
 }

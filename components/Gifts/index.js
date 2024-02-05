@@ -1,4 +1,4 @@
-import { Container, Flex, Grid, GridItem, Heading, Image, Link, Text } from '@chakra-ui/react'
+import { Container, Flex, Grid, GridItem, Heading, Image, Button, Text } from '@chakra-ui/react'
 import { Parallax } from 'react-scroll-parallax'
 import { useWindowSize } from '../../helpers/hooks'
 import newZealand from '../../images/new_zealand.jpeg'
@@ -14,14 +14,28 @@ const Gifts = () => {
         gap={10}
       >
         <GridItem order={[1, 0]}>
-          <Flex direction="column" justifyContent="center" height="100%" textAlign={['start', 'end']}>
+          <Flex direction="column" justifyContent="center" height="100%">
             <Heading size="lg" mb={4}>The Gift List</Heading>
-            <Text mb={4}>We don&apos;t want towels we want a sick honeymoon</Text>
+
+            <Text mb={4}>
+              We don&apos;t expect gifts, we&apos;re just happy you can join us on our special day. 
+              If you would like to give us something, we would love contributions to our honeymoon.
+            </Text>
+
+            <Button 
+              as="a" 
+              href="https://prezola.com/buy/view/164075"
+              target="_blank"
+              variant="outline" 
+              className="greenButton" 
+              >
+              Go to the gift list
+            </Button>
           </Flex>
         </GridItem>
         <GridItem>
           <Parallax speed={isMobile ? 0 : 5}>
-            <Image src={newZealand.src} alt="Oak Tree Barn" />
+            <Image src={newZealand.src} alt="Oak Tree Barn" borderRadius={20} />
           </Parallax>
         </GridItem>
       </Grid>
