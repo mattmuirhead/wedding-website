@@ -60,7 +60,7 @@ const Rsvp = React.memo(() => {
       {submitted ? (
         <Heading size="md" my={4} textAlign="center">
           {isAttending ? (
-            <>Woo! Thanks {names}, we can't wait to celebrate with you! See you on the 28th September 2024!!</>
+            <>Woo! Thanks {names}, we can&apos;t wait to celebrate with you! See you on the 28th September 2024!!</>
           ) : (
             <>Friendship sacrificed, goodbye.</>
           )}
