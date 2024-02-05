@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux'
 import { login } from '../../helpers/login'
 import Logo from '../Logo'
 import { ArrowForwardIcon } from '@chakra-ui/icons'
+import swoosh from '../../images/swoosh.svg'
 
 const Login = () => {
   const dispatch = useDispatch()
@@ -65,6 +66,8 @@ const Login = () => {
           <Text color="red" mb={4} height={8}>{!!error && <>Incorrect passcode</>}</Text>
         </form>
       </Container>
+
+      <img src={swoosh.src} alt="Swoosh" className="swoosh" />
     </Box>
   )
 }

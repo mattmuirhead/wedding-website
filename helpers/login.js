@@ -1,8 +1,8 @@
 const invites = [
   {
     id: 1,
-    people: ['Matt', 'Coral'],
-    passcode: 'matt',
+    people: ['everyone'],
+    passcode: 'wannadisco',
   }
 ]
 
