@@ -1,11 +1,16 @@
 import { useState } from 'react'
-import { Box, Container, FormControl, Input, InputGroup, Text, IconButton } from '@chakra-ui/react'
+import { Box, Container, FormControl, Input, InputGroup, Text, IconButton, Heading } from '@chakra-ui/react'
 import { setSession, setLoading } from '../../state/session'
 import { useDispatch } from 'react-redux'
 import { login } from '../../helpers/login'
 import Logo from '../Logo'
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 import swoosh from '../../images/swoosh.svg'
+
+import ImgMd from '../../images/coralmatt/coralandmatt-md.jpeg'
+import ImgLg from '../../images/coralmatt/coralandmatt-lg.jpeg'
+import ImgXl from '../../images/coralmatt/coralandmatt-xl.jpeg'
+import ImgFull from '../../images/coralmatt/coralandmatt.jpeg'
 
 const Login = () => {
   const dispatch = useDispatch()
@@ -38,7 +43,7 @@ const Login = () => {
       <Container maxWidth={400} display="flex" flexDirection="column">
         <form onSubmit={handleLogin}>
           <Logo size="sm" />
-          <Text size="md" textAlign="center" my={4}>28th September 2024</Text>
+          <Heading size="md" textAlign="center" my={4}>28th September 2024</Heading>
           <FormControl alignItems="center">
             <InputGroup size="md" mb={4} gap={4}>
               <Input
@@ -68,6 +73,16 @@ const Login = () => {
       </Container>
 
       <img src={swoosh.src} alt="Swoosh" className="swoosh" />
+
+      <img
+        style={{ display: 'none' }}
+        sizes="(max-width: 1920px) 100vw, 192-px"
+        srcSet={`
+        ${ImgMd.src} 1024w,
+        ${ImgLg.src} 1280w,
+        ${ImgXl.src} 1920w`}
+        src={ImgFull.src}
+        alt=""/>
     </Box>
   )
 }

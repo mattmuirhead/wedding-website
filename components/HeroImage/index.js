@@ -1,9 +1,7 @@
 import { Box } from '@chakra-ui/react'
 import Logo from '../Logo'
-import Image from 'next/image'
 import styled from '@emotion/styled'
 
-import ImgSm from '../../images/coralmatt/coralandmatt-sm.jpeg'
 import ImgMd from '../../images/coralmatt/coralandmatt-md.jpeg'
 import ImgLg from '../../images/coralmatt/coralandmatt-lg.jpeg'
 import ImgXl from '../../images/coralmatt/coralandmatt-xl.jpeg'
