@@ -3,19 +3,20 @@ import Logo from '../Logo'
 import Image from 'next/image'
 import styled from '@emotion/styled'
 
-import Img500 from '../../images/coralmatt/coral_matt_tfxbiv_c_scale,w_500.jpg'
-import Img1078 from '../../images/coralmatt/coral_matt_tfxbiv_c_scale,w_1078.jpg'
-import Img1503 from '../../images/coralmatt/coral_matt_tfxbiv_c_scale,w_1503.jpg'
-import Img1690 from '../../images/coralmatt/coral_matt_tfxbiv_c_scale,w_1690.jpg'
+import ImgSm from '../../images/coralmatt/coralandmatt-sm.jpeg'
+import ImgMd from '../../images/coralmatt/coralandmatt-md.jpeg'
+import ImgLg from '../../images/coralmatt/coralandmatt-lg.jpeg'
+import ImgXl from '../../images/coralmatt/coralandmatt-xl.jpeg'
+import ImgFull from '../../images/coralmatt/coralandmatt.jpeg'
 
-const CoverImage = styled(Image)`
+const CoverImage = styled.img`
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
   object-fit: cover;
-  filter: opacity(0.8);
+  opacity: 0.8;
 `
 
 const Mask = styled.svg`
@@ -43,13 +44,12 @@ const HeroImage = () => {
       <picture>
         <CoverImage
           fill
-          sizes="(max-width: 1690px) 100vw, 1690px"
+          sizes="(max-width: 1920px) 100vw, 192-px"
           srcSet={`
-          ${Img500.src} 500w,
-          ${Img1078.src} 1078w,
-          ${Img1503.src} 1503w,
-          ${Img1690.src} 1690w`}
-          src={Img1690.src}
+          ${ImgMd.src} 1024w,
+          ${ImgLg.src} 1280w,
+          ${ImgXl.src} 1920w`}
+          src={ImgFull.src}
           alt=""/>
       </picture>
 
