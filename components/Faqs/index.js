@@ -24,9 +24,6 @@ const Faqs = () => (
         </AccordionButton>
         <AccordionPanel pb={4}>
           <Text mb={4}>
-            You can get Uber from the venue but we would recommend booking in advance.
-          </Text>
-          <Text mb={4}>
             Unfortunately Uber is not available from the venue, however there are local taxi companies that you can use. We would also recommend booking in advance.
           </Text>
         </AccordionPanel>
