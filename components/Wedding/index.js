@@ -28,7 +28,7 @@ const Wedding = () => {
               You&apos;re welcome to arrive from 12pm. The ceremony will begin at 1pm. Drinks, food and lots of dancing will follow from 2pm onwards.
             </Text>
             <Text mb={4}>
-              If you&apos;re an evening guest, you&apos;re welcome to arrive from 5pm onwards - we look forward to seeing you!
+              If you&apos;re an evening guest, you&apos;re welcome to arrive from 6pm onwards - we look forward to seeing you!
             </Text>
             <Text mb={4}>
               The day will unfortunately have to come to an end - boo! Celebrations will end around 11:30PM.
